@@ -4,129 +4,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Portfolio | Modern Demo</title>
+    <meta name="description" content="Solomon Tsega - Data Scientist & Web Developer specializing in machine learning, full-stack development, and data visualization. Transforming complex data into actionable insights.">
+    <meta name="keywords" content="data scientist, web developer, machine learning, python, javascript, solomon tsega, portfolio">
+    <meta name="author" content="Solomon Tsega">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Solomon Tsega - Data Scientist & Web Developer">
+    <meta property="og:description" content="Transforming data into insights and building premium digital experiences with precision and passion.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://soltsega.github.io">
+    <meta property="og:image" content="https://soltsega.github.io/og-image.jpg">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Solomon Tsega - Data Scientist & Web Developer">
+    <meta name="twitter:description" content="Transforming data into insights and building premium digital experiences.">
+    <meta name="twitter:image" content="https://soltsega.github.io/og-image.jpg">
+    
+    <title>Solomon Tsega - Data Scientist & Web Developer | Portfolio</title>
     <link rel="stylesheet" href="index.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@400;700&display=swap"
         rel="stylesheet">
+        
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Solomon Tsega",
+        "jobTitle": "Data Scientist, Junior Machine Learning Engineer and Frontend Web Developer",
+        "url": "https://soltsega.github.io",
+        "sameAs": [
+            "https://github.com/soltsega",
+            "https://www.linkedin.com/in/solomontsega/",
+            "https://t.me/Goahdsol16"
+        ],
+        "knowsAbout": ["Data Science", "Machine Learning", "Web Development", "Python", "JavaScript"],
+        "worksFor": {
+            "@type": "Organization",
+            "name": "Independent Professional"
+        }
+    }
+    </script>
 </head>
 
 <body>
-    <nav class="glass navbar">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <nav class="glass navbar" role="navigation" aria-label="Main navigation">
         <div class="container nav-content">
             <div class="logo">SOLOMON <span class="gradient-text">TSEGA</span></div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Work</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact" class="btn">Say Hello</a></li>
+            
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-btn" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a href="#projects" role="menuitem">Work</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#contact" class="btn" role="menuitem">Say Hello</a></li>
             </ul>
         </div>
     </nav>
 
-    <header id="home" class="hero section">
-        <div class="container hero-content">
-            <h1 class="reveal">Data Scientist & <span class="gradient-text">Web Developer</span></h1>
-            <p class="reveal" style="animation-delay: 0.2s;">Transforming data into insights and building premium
-                digital experiences with precision and passion.</p>
-            <div class="hero-btns reveal" style="animation-delay: 0.4s;">
-                <a href="#projects" class="btn primary">View My Work</a>
-                <a href="https://github.com/soltsega" target="_blank" class="btn secondary">GitHub</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="glass project-card reveal">
-                    <div class="project-img" style="background: linear-gradient(45deg, #6366f1, #a855f7);"></div>
-                    <div class="project-info">
-                        <h3>Financial Inclusion Forecasting</h3>
-                        <p>Advanced time-series analysis to forecast financial trends and inclusive growth in Ethiopia.
-                            Built with Python and Scikit-Learn.</p>
-                    </div>
-                </div>
-                <div class="glass project-card reveal" style="animation-delay: 0.2s;">
-                    <div class="project-img" style="background: linear-gradient(45deg, #3b82f6, #2dd4bf);"></div>
-                    <div class="project-info">
-                        <h3>Sentiment Analysis Professional</h3>
-                        <p>High-performance classification model using SGD Classifier and K-Fold cross-validation for
-                            robust sentiment detection.</p>
-                    </div>
-                </div>
-                <div class="glass project-card reveal" style="animation-delay: 0.4s;">
-                    <div class="project-img" style="background: linear-gradient(45deg, #f59e0b, #ef4444);"></div>
-                    <div class="project-info">
-                        <h3>Spiritual Resources Hub</h3>
-                        <p>A multi-page dashboard for spiritual resources, featuring high-performance navigation and
-                            clean UI/UX for community engagement.</p>
-                    </div>
+    <main id="main-content">
+        <header id="home" class="hero section" role="banner">
+            <div class="container hero-content">
+                <h1 class="reveal">Data Scientist & <span class="gradient-text">Web Developer</span></h1>
+                <p class="reveal" style="animation-delay: 0.2s;">Transforming data into insights and building premium
+                    digital experiences with precision and passion.</p>
+                <div class="hero-btns reveal" style="animation-delay: 0.4s;">
+                    <a href="#projects" class="btn primary">View My Work</a>
+                    <a href="https://github.com/soltsega" target="_blank" class="btn secondary" rel="noopener noreferrer">GitHub</a>
                 </div>
             </div>
-        </div>
-    </section>
+        </header>
 
-    <section id="about" class="section">
-        <div class="container about-content">
-            <div class="reveal">
-                <h2 class="section-title">About Me</h2>
-                <div class="glass about-card">
-                    <p>I am a versatile professional specializing in <strong>Data Science</strong> and
-                        <strong>Full-Stack Web Development</strong>. My work bridges the gap between complex data
-                        analysis and intuitive user interfaces. Whether I'm building predictive models or crafting
-                        responsive web applications, my focus is always on delivering high-impact solutions that solve
-                        real-world problems.</p>
-                    <p style="margin-top: 1rem;">Based in Ethiopia, I am passionate about leveraging technology for
-                        community growth and professional excellence.</p>
+        <section id="projects" class="section" aria-labelledby="projects-title">
+            <div class="container">
+                <h2 id="projects-title" class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <article class="glass project-card reveal">
+                        <div class="project-img" style="background: linear-gradient(45deg, #6366f1, #a855f7);" aria-hidden="true"></div>
+                        <div class="project-info">
+                            <h3>Financial Inclusion Forecasting</h3>
+                            <p>Advanced time-series analysis to forecast financial trends and inclusive growth in Ethiopia.
+                                Built with Python and Scikit-Learn.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn secondary small" aria-label="View Financial Inclusion Forecasting project">View Project</a>
+                                <a href="https://github.com/soltsega" target="_blank" class="btn secondary small" aria-label="View source code on GitHub">Code</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="glass project-card reveal" style="animation-delay: 0.2s;">
+                        <div class="project-img" style="background: linear-gradient(45deg, #3b82f6, #2dd4bf);" aria-hidden="true"></div>
+                        <div class="project-info">
+                            <h3>Sentiment Analysis Professional</h3>
+                            <p>High-performance classification model using SGD Classifier and K-Fold cross-validation for
+                                robust sentiment detection.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn secondary small" aria-label="View Sentiment Analysis project">View Project</a>
+                                <a href="https://github.com/soltsega" target="_blank" class="btn secondary small" aria-label="View source code on GitHub">Code</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="glass project-card reveal" style="animation-delay: 0.4s;">
+                        <div class="project-img" style="background: linear-gradient(45deg, #f59e0b, #ef4444);" aria-hidden="true"></div>
+                        <div class="project-info">
+                            <h3>Spiritual Resources Hub</h3>
+                            <p>A multi-page dashboard for spiritual resources, featuring high-performance navigation and
+                                clean UI/UX for community engagement.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn secondary small" aria-label="View Spiritual Resources Hub project">View Project</a>
+                                <a href="https://github.com/soltsega" target="_blank" class="btn secondary small" aria-label="View source code on GitHub">Code</a>
+                            </div>
+                        </div>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Technical Expertise</h2>
-            <div class="skills-grid">
-                <div class="glass skill-item reveal">Python (Scikit-Learn, Pandas)</div>
-                <div class="glass skill-item reveal">HTML5 & CSS3 (Modern UI)</div>
-                <div class="glass skill-item reveal">JavaScript (ES6+)</div>
-                <div class="glass skill-item reveal">Machine Learning & NLP</div>
-                <div class="glass skill-item reveal">Time-Series Analysis</div>
-                <div class="glass skill-item reveal">UI/UX Design</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="container contact-container">
-            <div class="reveal">
-                <h2 class="section-title">Let's Connect</h2>
-                <p style="text-align: center; color: var(--text-dim); margin-bottom: 2rem;">Feel free to reach out for
-                    collaborations or just to say hi!</p>
-                <div class="glass contact-card">
-                    <div class="contact-links"
-                        style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
-                        <a href="mailto:tsegasolomon538@gmail.com" class="btn secondary">Email Me</a>
-                        <a href="https://t.me/Goahdsol16" target="_blank" class="btn secondary">Telegram</a>
-                        <a href="https://www.linkedin.com/in/solomontsega/" target="_blank"
-                            class="btn secondary">LinkedIn</a>
+        <section id="about" class="section" aria-labelledby="about-title">
+            <div class="container about-content">
+                <div class="reveal">
+                    <h2 id="about-title" class="section-title">About Me</h2>
+                    <div class="glass about-card">
+                        <p>I am a versatile professional specializing in <strong>Data Science</strong> and
+                            <strong>Full-Stack Web Development</strong>. My work bridges the gap between complex data
+                            analysis and intuitive user interfaces. Whether I'm building predictive models or crafting
+                            responsive web applications, my focus is always on delivering high-impact solutions that solve
+                            real-world problems.</p>
+                        <p style="margin-top: 1rem;">Based in Ethiopia, I am passionate about leveraging technology for
+                            community growth and professional excellence.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer class="footer">
+        <section id="skills" class="section" aria-labelledby="skills-title">
+            <div class="container">
+                <h2 id="skills-title" class="section-title">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="glass skill-item reveal">Python (Scikit-Learn, Pandas)</div>
+                    <div class="glass skill-item reveal">HTML5 & CSS3 (Modern UI)</div>
+                    <div class="glass skill-item reveal">JavaScript (ES6+)</div>
+                    <div class="glass skill-item reveal">Machine Learning & NLP</div>
+                    <div class="glass skill-item reveal">Time-Series Analysis</div>
+                    <div class="glass skill-item reveal">UI/UX Design</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section" aria-labelledby="contact-title">
+            <div class="container contact-container">
+                <div class="reveal">
+                    <h2 id="contact-title" class="section-title">Let's Connect</h2>
+                    <p style="text-align: center; color: var(--text-dim); margin-bottom: 2rem;">Feel free to reach out for
+                        collaborations or just to say hi!</p>
+                    <div class="glass contact-card">
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" class="glass-input" required aria-required="true">
+                                <span class="error-message" id="name-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" class="glass-input" required aria-required="true">
+                                <span class="error-message" id="email-error"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" class="glass-input" required aria-required="true"></textarea>
+                                <span class="error-message" id="message-error"></span>
+                            </div>
+                            <button type="submit" class="btn primary" style="width: 100%;">Send Message</button>
+                        </form>
+                        <div id="form-success" class="success-message" style="display: none;">
+                            <p>Thank you for your message! I'll get back to you soon.</p>
+                        </div>
+                        <div class="contact-links"
+                            style="display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;">
+                            <a href="mailto:tsegasolomon538@gmail.com" class="btn secondary">Email Me</a>
+                            <a href="https://t.me/Goahdsol16" target="_blank" class="btn secondary" rel="noopener noreferrer">Telegram</a>
+                            <a href="https://www.linkedin.com/in/solomontsega/" target="_blank"
+                                class="btn secondary" rel="noopener noreferrer">LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Dark Mode Toggle -->
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <span class="theme-icon" id="theme-icon">🌙</span>
+    </button>
+
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <p>&copy; 2026 Solomon Tsega. Built with precision and passion.</p>
             <div style="margin-top: 1rem;">
-                <a href="https://github.com/soltsega" target="_blank"
+                <a href="https://github.com/soltsega" target="_blank" rel="noopener noreferrer"
                     style="color: var(--text-dim); text-decoration: none; margin: 0 10px;">GitHub</a>
-                <a href="https://www.linkedin.com/in/solomontsega/" target="_blank"
+                <a href="https://www.linkedin.com/in/solomontsega/" target="_blank" rel="noopener noreferrer"
                     style="color: var(--text-dim); text-decoration: none; margin: 0 10px;">LinkedIn</a>
             </div>
         </div>
