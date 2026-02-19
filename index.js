@@ -3,6 +3,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
     
+    // Touch detection
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    
     // Toggle mobile menu
     if (mobileMenuBtn && navLinks) {
         mobileMenuBtn.addEventListener('click', () => {
@@ -12,6 +15,11 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Prevent body scroll when menu is open
             document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+            
+            // Add haptic feedback on touch devices
+            if (isTouchDevice && navigator.vibrate) {
+                navigator.vibrate(50);
+            }
         });
         
         // Close menu when clicking on a link
@@ -41,6 +49,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 mobileMenuBtn.focus();
             }
         });
+        
+        // Add touch gesture support for swipe to close
+        if (isTouchDevice) {
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            navLinks.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+            
+            navLinks.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const swipeDistance = touchStartX - touchEndX;
+                
+                // Swipe left to close menu
+                if (swipeDistance > 50 && navLinks.classList.contains('active')) {
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    navLinks.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            }, { passive: true });
+        }
     }
     
     // Smooth scrolling for navigation links
@@ -49,16 +79,72 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
-                const offset = 80; // Account for fixed navbar
+                const offset = isTouchDevice ? 60 : 80; // Smaller offset for mobile
                 const targetPosition = target.offsetTop - offset;
                 
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                // Smooth scroll with mobile optimization
+                if (isTouchDevice) {
+                    // Use instant scroll on mobile for better performance
+                    window.scrollTo(0, targetPosition);
+                } else {
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
             }
         });
     });
+    
+    // Mobile performance optimizations
+    if (isTouchDevice) {
+        // Disable hover effects on touch devices
+        document.body.classList.add('touch-device');
+        
+        // Optimize scroll performance
+        let ticking = false;
+        function updateOnScroll() {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    updateActiveNav();
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }
+        
+        window.addEventListener('scroll', updateOnScroll, { passive: true });
+        
+        // Add pull-to-refresh hint (visual feedback)
+        let startY = 0;
+        let isPulling = false;
+        
+        document.addEventListener('touchstart', (e) => {
+            if (window.scrollY === 0) {
+                startY = e.touches[0].pageY;
+                isPulling = true;
+            }
+        }, { passive: true });
+        
+        document.addEventListener('touchmove', (e) => {
+            if (isPulling && window.scrollY === 0) {
+                const currentY = e.touches[0].pageY;
+                const pullDistance = currentY - startY;
+                
+                if (pullDistance > 80) {
+                    // Visual feedback for pull-to-refresh
+                    document.body.style.transform = `translateY(${Math.min(pullDistance - 80, 20)}px)`;
+                }
+            }
+        }, { passive: true });
+        
+        document.addEventListener('touchend', () => {
+            if (isPulling) {
+                document.body.style.transform = '';
+                isPulling = false;
+            }
+        }, { passive: true });
+    }
     
     // Contact Form Validation and Submission
     const contactForm = document.getElementById('contact-form');
