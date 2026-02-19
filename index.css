@@ -196,19 +196,6 @@ ul {
     transform: scale(1.02);
 }
 
-/* Animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* Reveal Animation */
 .reveal {
     opacity: 0;
@@ -283,14 +270,27 @@ textarea.glass-input {
     color: var(--text-dim);
 }
 
-/* Base Styles updated for reveal */
-.reveal {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: all 0.8s ease;
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
+.btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-primary);
+}
+
+.contact-links .btn {
+    min-width: 150px;
+    text-align: center;
 }

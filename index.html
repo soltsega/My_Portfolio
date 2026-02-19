@@ -16,10 +16,10 @@
 <body>
     <nav class="glass navbar">
         <div class="container nav-content">
-            <div class="logo">PORTFOLIO</div>
+            <div class="logo">SOLOMON <span class="gradient-text">TSEGA</span></div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#projects">Work</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact" class="btn">Say Hello</a></li>
             </ul>
@@ -28,33 +28,42 @@
 
     <header id="home" class="hero section">
         <div class="container hero-content">
-            <h1 class="reveal">Creative <span class="gradient-text">Developer</span> & Designer</h1>
-            <p class="reveal" style="animation-delay: 0.2s;">Building digital experiences that blend aesthetic elegance
-                with technical precision.</p>
+            <h1 class="reveal">Data Scientist & <span class="gradient-text">Web Developer</span></h1>
+            <p class="reveal" style="animation-delay: 0.2s;">Transforming data into insights and building premium
+                digital experiences with precision and passion.</p>
             <div class="hero-btns reveal" style="animation-delay: 0.4s;">
-                <a href="#projects" class="btn primary">View Work</a>
-                <a href="#contact" class="btn secondary">Get in Touch</a>
+                <a href="#projects" class="btn primary">View My Work</a>
+                <a href="https://github.com/soltsega" target="_blank" class="btn secondary">GitHub</a>
             </div>
         </div>
     </header>
 
     <section id="projects" class="section">
         <div class="container">
-            <h2 class="section-title">Selected Projects</h2>
+            <h2 class="section-title">Featured Projects</h2>
             <div class="projects-grid">
-                <!-- Project cards will be here -->
                 <div class="glass project-card reveal">
-                    <div class="project-img"></div>
+                    <div class="project-img" style="background: linear-gradient(45deg, #6366f1, #a855f7);"></div>
                     <div class="project-info">
-                        <h3>Project One</h3>
-                        <p>Modern E-commerce Solution</p>
+                        <h3>Financial Inclusion Forecasting</h3>
+                        <p>Advanced time-series analysis to forecast financial trends and inclusive growth in Ethiopia.
+                            Built with Python and Scikit-Learn.</p>
                     </div>
                 </div>
                 <div class="glass project-card reveal" style="animation-delay: 0.2s;">
-                    <div class="project-img"></div>
+                    <div class="project-img" style="background: linear-gradient(45deg, #3b82f6, #2dd4bf);"></div>
                     <div class="project-info">
-                        <h3>Project Two</h3>
-                        <p>AI-Powered Analytics Dashboard</p>
+                        <h3>Sentiment Analysis Professional</h3>
+                        <p>High-performance classification model using SGD Classifier and K-Fold cross-validation for
+                            robust sentiment detection.</p>
+                    </div>
+                </div>
+                <div class="glass project-card reveal" style="animation-delay: 0.4s;">
+                    <div class="project-img" style="background: linear-gradient(45deg, #f59e0b, #ef4444);"></div>
+                    <div class="project-info">
+                        <h3>Spiritual Resources Hub</h3>
+                        <p>A multi-page dashboard for spiritual resources, featuring high-performance navigation and
+                            clean UI/UX for community engagement.</p>
                     </div>
                 </div>
             </div>
@@ -66,9 +75,13 @@
             <div class="reveal">
                 <h2 class="section-title">About Me</h2>
                 <div class="glass about-card">
-                    <p>I am a passionate developer with a keen eye for design. With years of experience in crafting
-                        high-performance web applications, I focus on creating interfaces that are not only functional
-                        but also visually stunning and intuitive.</p>
+                    <p>I am a versatile professional specializing in <strong>Data Science</strong> and
+                        <strong>Full-Stack Web Development</strong>. My work bridges the gap between complex data
+                        analysis and intuitive user interfaces. Whether I'm building predictive models or crafting
+                        responsive web applications, my focus is always on delivering high-impact solutions that solve
+                        real-world problems.</p>
+                    <p style="margin-top: 1rem;">Based in Ethiopia, I am passionate about leveraging technology for
+                        community growth and professional excellence.</p>
                 </div>
             </div>
         </div>
@@ -76,13 +89,13 @@
 
     <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Tech Stack</h2>
+            <h2 class="section-title">Technical Expertise</h2>
             <div class="skills-grid">
-                <div class="glass skill-item reveal">HTML5</div>
-                <div class="glass skill-item reveal">CSS3</div>
-                <div class="glass skill-item reveal">JavaScript</div>
-                <div class="glass skill-item reveal">React</div>
-                <div class="glass skill-item reveal">Node.js</div>
+                <div class="glass skill-item reveal">Python (Scikit-Learn, Pandas)</div>
+                <div class="glass skill-item reveal">HTML5 & CSS3 (Modern UI)</div>
+                <div class="glass skill-item reveal">JavaScript (ES6+)</div>
+                <div class="glass skill-item reveal">Machine Learning & NLP</div>
+                <div class="glass skill-item reveal">Time-Series Analysis</div>
                 <div class="glass skill-item reveal">UI/UX Design</div>
             </div>
         </div>
@@ -92,21 +105,16 @@
         <div class="container contact-container">
             <div class="reveal">
                 <h2 class="section-title">Let's Connect</h2>
-                <p style="text-align: center; color: var(--text-dim); margin-bottom: 2rem;">Have a project in mind?
-                    Let's build something amazing together.</p>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 2rem;">Feel free to reach out for
+                    collaborations or just to say hi!</p>
                 <div class="glass contact-card">
-                    <form id="contact-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" class="glass-input">
-                        </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" class="glass-input">
-                        </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" class="glass-input"></textarea>
-                        </div>
-                        <button type="submit" class="btn primary">Send Message</button>
-                    </form>
+                    <div class="contact-links"
+                        style="display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; flex-wrap: wrap;">
+                        <a href="mailto:tsegasolomon538@gmail.com" class="btn secondary">Email Me</a>
+                        <a href="https://t.me/Goahdsol16" target="_blank" class="btn secondary">Telegram</a>
+                        <a href="https://www.linkedin.com/in/solomontsega/" target="_blank"
+                            class="btn secondary">LinkedIn</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -114,7 +122,13 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Your Name. All rights reserved.</p>
+            <p>&copy; 2026 Solomon Tsega. Built with precision and passion.</p>
+            <div style="margin-top: 1rem;">
+                <a href="https://github.com/soltsega" target="_blank"
+                    style="color: var(--text-dim); text-decoration: none; margin: 0 10px;">GitHub</a>
+                <a href="https://www.linkedin.com/in/solomontsega/" target="_blank"
+                    style="color: var(--text-dim); text-decoration: none; margin: 0 10px;">LinkedIn</a>
+            </div>
         </div>
     </footer>
 
