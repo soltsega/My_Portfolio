@@ -289,26 +289,26 @@ ul {
 
 /* Project Filters */
 .project-filters {
-    display: flex;
+    display: flex !important;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 0.75rem;
     margin-bottom: 3rem;
     padding: 1.25rem;
-    background: var(--card-bg);
+    background: var(--card-bg) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--glass-border) !important;
     border-radius: 20px;
-    box-shadow: var(--glass-shadow);
+    box-shadow: var(--glass-shadow) !important;
 }
 
 .filter-btn {
-    padding: 0.75rem 1.5rem;
-    border: 1px solid var(--glass-border);
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-main);
+    padding: 0.75rem 1.5rem !important;
+    border: 1px solid var(--glass-border) !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-main) !important;
     border-radius: 25px;
     font-weight: 500;
     font-size: 0.9rem;
@@ -316,22 +316,24 @@ ul {
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    font-family: var(--font-main);
+    font-family: var(--font-main) !important;
+    text-decoration: none !important;
+    display: inline-block;
 }
 
 .filter-btn:hover,
 .filter-btn:focus {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--accent-primary);
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--accent-primary) !important;
     transform: translateY(-2px);
     outline: none;
     box-shadow: 0 4px 12px rgba(0, 255, 255, 0.2);
 }
 
 .filter-btn.active {
-    background: var(--accent-primary);
-    color: var(--bg-color);
-    border-color: var(--accent-primary);
+    background: var(--accent-primary) !important;
+    color: var(--bg-color) !important;
+    border-color: var(--accent-primary) !important;
     box-shadow: 0 4px 16px rgba(0, 255, 255, 0.4);
     transform: translateY(-1px);
 }
