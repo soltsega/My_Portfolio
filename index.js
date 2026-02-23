@@ -73,6 +73,115 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    // Project Category Filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const projectsGrid = document.getElementById('projects-grid');
+    
+    if (filterButtons.length > 0 && projectCards.length > 0) {
+        // Initialize all projects as visible
+        projectCards.forEach(card => {
+            card.classList.add('visible');
+        });
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                
+                // Update active button state
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active');
+                    btn.setAttribute('aria-selected', 'false');
+                });
+                button.classList.add('active');
+                button.setAttribute('aria-selected', 'true');
+                
+                // Filter projects with smooth animation
+                filterProjects(category);
+                
+                // Add haptic feedback on touch devices
+                if (isTouchDevice && navigator.vibrate) {
+                    navigator.vibrate(30);
+                }
+            });
+            
+            // Keyboard support
+            button.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    button.click();
+                }
+            });
+        });
+        
+        function filterProjects(category) {
+            const visibleCards = [];
+            const hiddenCards = [];
+            
+            projectCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                const shouldShow = category === 'all' || cardCategory === category;
+                
+                if (shouldShow) {
+                    visibleCards.push(card);
+                    card.classList.remove('hidden');
+                    card.classList.add('visible');
+                } else {
+                    hiddenCards.push(card);
+                    card.classList.remove('visible');
+                    card.classList.add('hidden');
+                }
+            });
+            
+            // Reveal animation for visible cards
+            visibleCards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1) translateY(0)';
+                }, index * 100);
+            });
+            
+            // Hide animation for hidden cards
+            hiddenCards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8) translateY(20px)';
+            });
+            
+            // Update grid layout after animation
+            setTimeout(() => {
+                if (visibleCards.length === 0) {
+                    // Show no results message
+                    showNoResultsMessage();
+                } else {
+                    hideNoResultsMessage();
+                }
+            }, 300);
+        }
+        
+        function showNoResultsMessage() {
+            let noResultsMsg = document.getElementById('no-results');
+            if (!noResultsMsg) {
+                noResultsMsg = document.createElement('div');
+                noResultsMsg.id = 'no-results';
+                noResultsMsg.className = 'no-results-message';
+                noResultsMsg.innerHTML = `
+                    <div class="glass" style="padding: 3rem; text-align: center; border-radius: 20px;">
+                        <h3 style="color: var(--text-main); margin-bottom: 1rem;">No projects found</h3>
+                        <p style="color: var(--text-dim);">Try selecting a different category to see more projects.</p>
+                    </div>
+                `;
+                projectsGrid.appendChild(noResultsMsg);
+            }
+        }
+        
+        function hideNoResultsMessage() {
+            const noResultsMsg = document.getElementById('no-results');
+            if (noResultsMsg) {
+                noResultsMsg.remove();
+            }
+        }
+    }
+    
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {

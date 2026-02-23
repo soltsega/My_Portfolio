@@ -287,10 +287,128 @@ ul {
     gap: 2.5rem;
 }
 
+.project-filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--glass-border);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border-radius: 25px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn:hover,
+.filter-btn:focus {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--accent-primary);
+    transform: translateY(-2px);
+    outline: none;
+}
+
+.filter-btn.active {
+    background: var(--accent-primary);
+    color: var(--bg-color);
+    border-color: var(--accent-primary);
+    box-shadow: 0 4px 12px rgba(0, 255, 255, 0.3);
+}
+
+.filter-btn:active {
+    transform: scale(0.98);
+}
+
+.project-badges {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.category-badge {
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+.category-badge.web-development {
+    background: linear-gradient(135deg, #f59e0b, #ef4444);
+    color: white;
+}
+
+.category-badge.data-science {
+    background: linear-gradient(135deg, #6366f1, #a855f7);
+    color: white;
+}
+
+.category-badge.data-analysis {
+    background: linear-gradient(135deg, #10b981, #059669);
+    color: white;
+}
+
+.category-badge.machine-learning {
+    background: linear-gradient(135deg, #3b82f6, #2dd4bf);
+    color: white;
+}
+
+.tech-badge {
+    padding: 0.25rem 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-dim);
+    transition: all 0.3s ease;
+}
+
+.tech-badge:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: var(--text-main);
+}
+
 .project-card {
     overflow: hidden;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-radius: 16px;
+    position: relative;
+}
+
+.project-card.hidden {
+    opacity: 0;
+    transform: scale(0.8) translateY(20px);
+    position: absolute;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.project-card.visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    position: relative;
+    pointer-events: auto;
+    z-index: 1;
 }
 
 .project-img {
@@ -594,6 +712,30 @@ textarea.glass-input {
         min-width: 0;
         padding: 0.75rem 1rem;
         font-size: 0.9rem;
+    }
+
+    .project-filters {
+        padding: 0.75rem;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+        border-radius: 20px;
+        min-height: 40px;
+    }
+
+    .project-badges {
+        gap: 0.4rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .category-badge,
+    .tech-badge {
+        padding: 0.2rem 0.6rem;
+        font-size: 0.7rem;
     }
 
     .hero-btns {

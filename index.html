@@ -96,10 +96,34 @@
         <section id="projects" class="section" aria-labelledby="projects-title">
             <div class="container">
                 <h2 id="projects-title" class="section-title">Featured Projects</h2>
-                <div class="projects-grid">
-                    <article class="glass project-card reveal">
+                
+                <!-- Project Category Filters -->
+                <div class="project-filters" role="tablist" aria-label="Project categories">
+                    <button class="filter-btn active" data-category="all" role="tab" aria-selected="true" aria-controls="projects-grid">
+                        All Projects
+                    </button>
+                    <button class="filter-btn" data-category="web-development" role="tab" aria-selected="false" aria-controls="projects-grid">
+                        Web Development
+                    </button>
+                    <button class="filter-btn" data-category="data-science" role="tab" aria-selected="false" aria-controls="projects-grid">
+                        Data Science
+                    </button>
+                    <button class="filter-btn" data-category="data-analysis" role="tab" aria-selected="false" aria-controls="projects-grid">
+                        Data Analysis
+                    </button>
+                    <button class="filter-btn" data-category="machine-learning" role="tab" aria-selected="false" aria-controls="projects-grid">
+                        Machine Learning
+                    </button>
+                </div>
+                
+                <div class="projects-grid" id="projects-grid" role="tabpanel">
+                    <article class="glass project-card reveal" data-category="data-science" data-tags="forecasting time-series python">
                         <div class="project-img" style="background: linear-gradient(45deg, #6366f1, #a855f7);" aria-hidden="true"></div>
                         <div class="project-info">
+                            <div class="project-badges">
+                                <span class="category-badge data-science">Data Science</span>
+                                <span class="tech-badge">Python</span>
+                            </div>
                             <h3>Financial Inclusion Forecasting</h3>
                             <p>Advanced time-series analysis to forecast financial trends and inclusive growth in Ethiopia.
                                 Built with Python and Scikit-Learn.</p>
@@ -109,9 +133,14 @@
                             </div>
                         </div>
                     </article>
-                    <article class="glass project-card reveal" style="animation-delay: 0.2s;">
+                    
+                    <article class="glass project-card reveal" style="animation-delay: 0.2s;" data-category="machine-learning" data-tags="nlp classification python">
                         <div class="project-img" style="background: linear-gradient(45deg, #3b82f6, #2dd4bf);" aria-hidden="true"></div>
                         <div class="project-info">
+                            <div class="project-badges">
+                                <span class="category-badge machine-learning">Machine Learning</span>
+                                <span class="tech-badge">NLP</span>
+                            </div>
                             <h3>Sentiment Analysis Professional</h3>
                             <p>High-performance classification model using SGD Classifier and K-Fold cross-validation for
                                 robust sentiment detection.</p>
@@ -121,9 +150,14 @@
                             </div>
                         </div>
                     </article>
-                    <article class="glass project-card reveal" style="animation-delay: 0.4s;">
+                    
+                    <article class="glass project-card reveal" style="animation-delay: 0.4s;" data-category="web-development" data-tags="dashboard ui-ux javascript">
                         <div class="project-img" style="background: linear-gradient(45deg, #f59e0b, #ef4444);" aria-hidden="true"></div>
                         <div class="project-info">
+                            <div class="project-badges">
+                                <span class="category-badge web-development">Web Development</span>
+                                <span class="tech-badge">Dashboard</span>
+                            </div>
                             <h3>Spiritual Resources Hub</h3>
                             <p>A multi-page dashboard for spiritual resources, featuring high-performance navigation and
                                 clean UI/UX for community engagement.</p>
