@@ -383,6 +383,11 @@ ul {
     color: white;
 }
 
+.category-badge.software-engineering {
+    background: linear-gradient(135deg, #8b5cf6, #ec4899);
+    color: white;
+}
+
 .category-badge:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
